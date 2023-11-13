@@ -1,0 +1,114 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Awesome Concrete Chips",
+      "slug": "awesome-concrete-chips",
+      "image": "https://picsum.photos/seed/lBzqvFn/800/600",
+      "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+      "published": true,
+      "price": "14.00"
+    },
+    {
+      "id": 2,
+      "name": "Intelligent Cotton Mouse",
+      "slug": "intelligent-cotton-mouse",
+      "image": "https://picsum.photos/seed/kU34d/800/600",
+      "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+      "published": true,
+      "price": "5.00"
+    },
+    {
+      "id": 3,
+      "name": "Oriental Fresh Pizza",
+      "slug": "oriental-fresh-pizza",
+      "image": "https://picsum.photos/seed/iqnDcO/800/600",
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+      "published": true,
+      "price": "8.00"
+    },
+    {
+      "id": 4,
+      "name": "Small Cotton Pizza",
+      "slug": "small-cotton-pizza",
+      "image": "https://picsum.photos/seed/TDTa9O/800/600",
+      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "published": false,
+      "price": "7.00"
+    },
+    {
+      "id": 5,
+      "name": "Sleek Cotton Bike",
+      "slug": "sleek-cotton-bike",
+      "image": "https://picsum.photos/seed/rsX7t/800/600",
+      "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+      "published": true,
+      "price": "1.00"
+    },
+    {
+      "id": 6,
+      "name": "Ergonomic Wooden Mouse",
+      "slug": "ergonomic-wooden-mouse",
+      "image": "https://picsum.photos/seed/3OO5smD/800/600",
+      "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+      "published": false,
+      "price": "6.00"
+    },
+    {
+      "id": 7,
+      "name": "Refined Rubber Shoes",
+      "slug": "refined-rubber-shoes",
+      "image": "https://picsum.photos/seed/dHt7s/800/600",
+      "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+      "published": false,
+      "price": "20.00"
+    },
+    {
+      "id": 8,
+      "name": "Unbranded Rubber Shoes",
+      "slug": "unbranded-rubber-shoes",
+      "image": "https://picsum.photos/seed/7gZ7n/800/600",
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "published": true,
+      "price": "3.00"
+    },
+    {
+      "id": 9,
+      "name": "Modern Metal Soap",
+      "slug": "modern-metal-soap",
+      "image": "https://picsum.photos/seed/1gEBizx/800/600",
+      "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "published": true,
+      "price": "3.00"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "createdAt": "2023-11-13T04:07:30.079Z",
+      "products": [
+        {
+          "productId": 4,
+          "price": 7,
+          "quantity": 2
+        },
+        {
+          "productId": 3,
+          "price": 8,
+          "quantity": 1
+        },
+        {
+          "productId": 8,
+          "price": 3,
+          "quantity": 1
+        },
+        {
+          "productId": 7,
+          "price": 20,
+          "quantity": 1
+        }
+      ],
+      "total": 45
+    }
+  ]
+}

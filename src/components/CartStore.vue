@@ -15,6 +15,7 @@
                 Totale: ${{ calculateTotal() }}
            
             </div>
+            <button @click="removeAll" class="h-10 px-6 font-semibold rounded-md bg-rose-700 hover:bg-rose-600 text-white">Rimuovi tutto</button>
         </div>
     </div>
  </template>
@@ -33,6 +34,10 @@
      store.removeFromCart(product);
  };
  
+ const removeAll = () => store.cart = cart.value = [];
+
+
+
  const calculateTotal = () => {
      return cart.value.reduce((total, product) => total + product.price, 0)
  };
