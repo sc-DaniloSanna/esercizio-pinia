@@ -4,10 +4,19 @@ module.exports = {
     "./index.html",
     "./src/assets/*.css",
     "./src/router/index.js",
-    './src/**/*.vue'
+    './src/**/*.vue',
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      extend: {
+        colors: {
+          red: '#ff0000',
+          blue: '#0000ff',
+          // ... altri colori
+        },
+      },
+    },
   },
   plugins: [],
 }

@@ -1,8 +1,8 @@
 <template>
   <div v-for="item in items" :key="item.id">
-            <div>{{ item.name }}</div>
+            <div class="capitalize font-bold">{{ item.name }}</div>
             <div>Prezzo: {{ item.price }}</div>
-            <button @click="addToCart(item)" class="h-10 px-6 font-semibold rounded-md bg-black text-white">Aggiungi al carrello</button>
+            <button @click="addToCart(item)" class="h-10 px-6 font-semibold rounded-md bg-emerald-500 hover:bg-emerald-600 text-white">Aggiungi al carrello</button>
         </div>
 </template>
 <script setup>
