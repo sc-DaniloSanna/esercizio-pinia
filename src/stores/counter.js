@@ -6,12 +6,12 @@ export const useStore = defineStore('myStoreId', {
     }),
 
     actions: {
-        addToCart(item) {
-            this.cart.push(item);
+        addToCart(product) {
+            this.cart.push(product);
         },
 
-        removeFromCart(item) {
-            const index = this.cart.findIndex(i => i.id === item.id);
+        removeFromCart(product) {
+            const index = this.cart.findIndex(i => i.id === product.id);
             if (index !== -1) {
                 this.cart.splice(index, 1);
             }
