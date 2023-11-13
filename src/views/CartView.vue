@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="cart">
     <cart-store/>
   </div>
 </template>
@@ -8,7 +8,7 @@ import CartStore from '../components/CartStore.vue';
 </script>
 <style>
 @media (min-width: 1024px) {
-  .about {
+  .cart {
     min-height: 100vh;
     display: flex;
     align-items: center;

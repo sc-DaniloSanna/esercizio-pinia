@@ -12,7 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">Carrello</RouterLink>
+        <RouterLink to="/cart">Carrello</RouterLink>
       </nav>
     </div>
   </header>
@@ -21,6 +21,9 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 header {
   line-height: 1.5;
   max-height: 100vh;
