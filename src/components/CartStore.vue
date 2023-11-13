@@ -39,7 +39,7 @@
 
 
  const calculateTotal = () => {
-     return cart.value.reduce((total, product) => total + product.price, 0)
+     return cart.value.reduce((total, product) => total + parseInt(product.price), 0)
  };
  </script>
  

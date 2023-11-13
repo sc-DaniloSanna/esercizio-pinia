@@ -6,7 +6,7 @@
         </div>
 </template>
 <script setup>
-import { products } from '../../content';
+import { products } from '../../db.json';
 import { useStore } from '../stores/counter';
 
 const store = useStore();
