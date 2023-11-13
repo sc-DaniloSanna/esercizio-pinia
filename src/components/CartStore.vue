@@ -15,13 +15,17 @@
                 Totale: ${{ calculateTotal() }}
            
             </div>
-            <button @click="removeAll" class="h-10 px-6 font-semibold rounded-md bg-rose-700 hover:bg-rose-600 text-white">Rimuovi tutto</button>
+            <button @click="removeAll" class="h-10 mb-4 px-6 font-semibold rounded-md bg-rose-700 hover:bg-rose-600 text-white">Rimuovi tutto</button>
+            <br>
+            <button @click="buy" class="h-10 px-6 font-semibold rounded-md bg-teal-600 hover:bg-teal-700 text-white">Compra</button>
         </div>
     </div>
  </template>
  <script setup>
  import { ref, onMounted } from 'vue';
  import { useStore } from '../stores/counter'; 
+ 
+import { CartStore } from "@/api/index.js";
  
  const store = useStore();
  const cart = ref([]);
@@ -35,6 +39,11 @@
  };
  
  const removeAll = () => store.cart = cart.value = [];
+
+ const buy = () => {
+    CartStore.postCart(...cart.value)
+    store.cart = cart.value = []
+ }
 
 
 
