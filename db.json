@@ -210,6 +210,28 @@
       "total": 35,
       "id": 1699976388595,
       "createdAt": "2023-11-14T15:39:48.595Z"
+    },
+    {
+      "products": [
+        {
+          "productId": 1,
+          "price": "14.00",
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "price": "5.00",
+          "quantity": 1
+        },
+        {
+          "productId": 3,
+          "price": "8.00",
+          "quantity": 1
+        }
+      ],
+      "total": 27,
+      "id": 1699978350760,
+      "createdAt": "2023-11-14T16:12:30.760Z"
     }
   ]
 }
