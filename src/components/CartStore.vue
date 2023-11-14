@@ -41,11 +41,9 @@ import { CartStore } from "@/api/index.js";
  const removeAll = () => store.cart = cart.value = [];
 
  const buy = () => {
-    CartStore.postCart(...cart.value)
+    CartStore.postCart(cart.value)
     store.cart = cart.value = []
  }
-
-
 
  const calculateTotal = () => {
      return cart.value.reduce((total, product) => total + parseInt(product.price), 0)
