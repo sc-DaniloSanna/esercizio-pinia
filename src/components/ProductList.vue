@@ -7,9 +7,9 @@
 </template>
 <script setup>
 import { products } from '../../db.json';
-import { useStore } from '../stores/counter';
+import { useUserCartStore } from '../stores/userCart.store';
 
-const store = useStore();
+const store = useUserCartStore();
 
 
 const addToCart = (product) => {

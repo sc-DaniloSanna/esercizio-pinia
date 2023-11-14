@@ -111,21 +111,56 @@
       "total": 45
     },
     {
-      "id": 551,
-      "createdAt": "2023-11-14T11:19:52.615Z",
       "products": [
         {
-          "productId": 4,
-          "price": 7,
-          "quantity": 1
+          "productId": 1,
+          "price": "14.00",
+          "quantity": 2
+        },
+        {
+          "productId": 2,
+          "price": "5.00",
+          "quantity": 2
+        },
+        {
+          "productId": 3,
+          "price": "8.00",
+          "quantity": 2
         },
         {
           "productId": 4,
-          "price": 7,
+          "price": "7.00",
+          "quantity": 2
+        },
+        {
+          "productId": 5,
+          "price": "1.00",
+          "quantity": 2
+        },
+        {
+          "productId": 6,
+          "price": "6.00",
+          "quantity": 5
+        },
+        {
+          "productId": 7,
+          "price": "20.00",
+          "quantity": 2
+        },
+        {
+          "productId": 8,
+          "price": "3.00",
+          "quantity": 1
+        },
+        {
+          "productId": 9,
+          "price": "3.00",
           "quantity": 1
         }
       ],
-      "total": 14
+      "total": 146,
+      "id": 1699975181611,
+      "createdAt": "2023-11-14T15:19:41.611Z"
     }
   ]
 }
