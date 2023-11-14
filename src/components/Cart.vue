@@ -30,7 +30,7 @@
 import { ref, onMounted } from 'vue';
 import { useUserCartStore } from '../stores/userCart.store';
 
-import { CartStore } from "@/api/index.js";
+import { Order } from "@/api/index.js";
 
 const userCartStore = useUserCartStore();
 const cart = ref([]);
@@ -74,7 +74,7 @@ const buy = async () => {
     };
 
     try {
-        let resp = await CartStore.postCart(order);
+        let resp = await Order.sendOrder(order);
         //if (resp.data.result !== 'OK') throw new Error(resp.data);
         //gestisco il caso ok 
         userCartStore.cart = cart.value = [];

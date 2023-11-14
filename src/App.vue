@@ -20,6 +20,9 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
+<script setup>
+</script>
+
 <style scoped>
 @tailwind base;
 @tailwind components;

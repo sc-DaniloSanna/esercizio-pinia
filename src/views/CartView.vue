@@ -1,10 +1,10 @@
 <template>
   <div class="cart">
-    <cart-store/>
+    <cart/>
   </div>
 </template>
 <script setup>
-import CartStore from '../components/CartStore.vue';
+import Cart from '../components/Cart.vue';
 </script>
 <style>
 @media (min-width: 1024px) {
