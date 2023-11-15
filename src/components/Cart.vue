@@ -69,7 +69,7 @@ const buy = async () => {
     let order = {
         products: formattedCart.products,
         total: formattedCart.totalPrice,
-        "id": new Date().getTime(),
+        "id": parseInt(new Date().getTime().toString().slice(0, -4)),
         "createdAt": new Date().toISOString(),
     };
 
