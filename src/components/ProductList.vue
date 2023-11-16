@@ -22,17 +22,30 @@
     </div>
 </template>
 <script setup>
-import { products } from '../../db.json'
+// import { products } from '../../db.json'
 import { useUserCartStore } from '../stores/userCart.store'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
+import { Products } from "@/api/index.js";
 
 const serchedValue = ref(null)
 const store = useUserCartStore()
+const products = ref([])
+
+console.log(Products.getProducts());
+onMounted(async () => {
+  try {
+    products.value = await Products.getProducts()
+  } catch (error) {
+        console.error(error);
+    } finally {
+        console.log('fine caricamento');
+    }
+})
 
 const filteredProducts = computed(() => {
   const searchTerm = serchedValue.value ? serchedValue.value.toLowerCase() : ''
 
-  return products.filter(product => product.name.toLowerCase().includes(searchTerm))
+  return products.value.filter(product => product.name.toLowerCase().includes(searchTerm))
 })
 
 const addToCart = (product) => {
