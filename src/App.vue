@@ -18,7 +18,7 @@ const changeLanguage = () => {
       <HelloWorld msg="VueShop 3.0" />
 
       <nav>
-        <button @click="changeLanguage">Cambia lingua</button>
+        <button @click="changeLanguage">{{ $t('language') }} &#x21C4;</button>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/cart">Carrello</RouterLink>
         <RouterLink to="/orders">Ordini</RouterLink>
@@ -51,21 +51,21 @@ nav {
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
+nav a.router-link-exact-active, nav button {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+nav a.router-link-exact-active:hover, nav button {
   background-color: transparent;
 }
 
-nav a {
+nav a , nav button{
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
 
-nav a:first-of-type {
+nav button:first-of-type {
   border: 0;
 }
 

@@ -19,12 +19,10 @@ import enTranslation from './assets/translations/en.json';
 const app = createApp(App);
 const i18n =  createI18n({
   legacy: false,
-  locale: 'it', // lingua predefinita
+  locale: 'it', 
   messages: {
     'it': itTranslation,
     'en': enTranslation,
-
-    // Aggiungi altre lingue secondo necessità
   },
 });
   
