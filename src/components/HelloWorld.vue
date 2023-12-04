@@ -1,4 +1,5 @@
 <script setup>
+
 defineProps({
   msg: {
     type: String,
@@ -11,7 +12,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green " >{{ msg }}</h1>
     <h3 class="font-mono">
-      Compra ora su prezzo giusto
+      {{ $t('welcome') }} Compra ora su prezzo giusto
     </h3>
   </div>
 </template>

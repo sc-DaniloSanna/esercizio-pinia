@@ -1,6 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { useI18n } from 'vue-i18n';
+import HelloWorld from './components/HelloWorld.vue';
+
+const { locale } = useI18n();
+
+const changeLanguage = () => {
+  locale.value = locale.value === 'it' ? 'en' : 'it';}
+
 </script>
 
 <template>
@@ -11,6 +18,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="VueShop 3.0" />
 
       <nav>
+        <button @click="changeLanguage">Cambia lingua</button>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/cart">Carrello</RouterLink>
         <RouterLink to="/orders">Ordini</RouterLink>
@@ -21,8 +29,6 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
-<script setup>
-</script>
 
 <style scoped>
 @tailwind base;
