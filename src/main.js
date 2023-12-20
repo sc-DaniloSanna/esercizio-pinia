@@ -11,6 +11,9 @@ import InputText from 'primevue/inputtext';
 import Dropdown from 'primevue/dropdown';
 import TreeTable from 'primevue/treetable';
 import Column from 'primevue/column';
+import Toast from "primevue/toast";
+import ToastService from "primevue/toastservice";
+
 
 import itTranslation from './assets/translations/it.json';
 import enTranslation from './assets/translations/en.json';
@@ -25,15 +28,18 @@ const i18n =  createI18n({
     'en': enTranslation,
   },
 });
+
   
 
 app.use(createPinia());
 app.use(router);
 app.use(PrimeVue);
 app.use(i18n);  
+app.use(ToastService);
 
 app.component('Dropdown', Dropdown);
 app.component('InputText', InputText);
+app.component("Toast", Toast)
 app.component('TreeTable', TreeTable);
 app.component('Column', Column);
 

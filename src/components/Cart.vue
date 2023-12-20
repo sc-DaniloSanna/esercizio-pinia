@@ -24,13 +24,16 @@
             <button @click="buy"
                 class="h-10 px-6 font-semibold rounded-md bg-teal-600 hover:bg-teal-700 text-white">Compra</button>
         </div>
+        <Toast />
     </div>
 </template>
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useUserCartStore } from '../stores/userCart.store';
-
+import { useToast } from 'primevue/usetoast';
 import { Order } from "@/api/index.js";
+
+const toast = useToast();
 
 const userCartStore = useUserCartStore();
 const cart = ref([]);
@@ -78,6 +81,7 @@ const buy = async () => {
         //if (resp.data.result !== 'OK') throw new Error(resp.data);
         //gestisco il caso ok 
         userCartStore.cart = cart.value = [];
+        toast.add({ severity: 'success', summary: 'Acquisito Effetuato!', life: 3000 });
     } catch (error) {
         console.error(error);
     } finally {

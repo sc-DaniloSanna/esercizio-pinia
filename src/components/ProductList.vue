@@ -1,55 +1,62 @@
 <template>
-    <div class="relative">
-        <svg width="20" height="20" fill="currentColor"
-        class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500"
-        aria-hidden="true">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-            class="" />
-    </svg>
-        <InputText v-model="serchedValue" placeholder="Search"
-            class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
-            type="text" aria-label="Filter projects" />
-    </div>
-    
-    <div v-for="product in filteredProducts" :key="product.id">
+    <div>
+      <div class="relative">
+        <!-- ... Il resto del tuo template ... -->
+      </div>
+  
+      <div v-for="product in filteredProducts" :key="product.id">
         <div class="capitalize font-bold">{{ product.name }}</div>
         <div>Prezzo: {{ product.price }}</div>
-        <button @click="addToCart(product)"
-            class="h-10 px-6 font-semibold rounded-md bg-emerald-500 hover:bg-emerald-600 text-white">
-            Aggiungi al carrello
+        <button @click="addToCart(product)" class="h-10 px-6 font-semibold rounded-md bg-emerald-500 hover:bg-emerald-600 text-white">
+          Aggiungi al carrello
         </button>
+      </div>
+  
+      <Toast ref="toast" />
     </div>
-</template>
-<script setup>
-// import { products } from '../../db.json'
-import { useUserCartStore } from '../stores/userCart.store'
-import { computed, ref, onMounted } from 'vue'
-import { Products } from "@/api/index.js";
-
-const serchedValue = ref(null)
-const store = useUserCartStore()
-const products = ref([])
-
-console.log(Products.getProducts());
-onMounted(async () => {
-  try {
-    products.value = await Products.getProducts()
-  } catch (error) {
-        console.error(error);
+  </template>
+  
+  <script setup>
+  import { ref, computed, onMounted } from 'vue';
+  import { useUserCartStore } from '../stores/userCart.store';
+  import { Products } from "@/api/index.js";
+  import { useToast } from 'primevue/usetoast';
+  
+  const searchedValue = ref(null);
+  const store = useUserCartStore();
+  const products = ref([]);
+  const toast = useToast();
+  
+  onMounted(async () => {
+    try {
+      products.value = await Products.getProducts();
+    } catch (error) {
+      console.error(error);
     } finally {
-        console.log('fine caricamento');
+      console.log('Fine caricamento');
     }
-})
-
-const filteredProducts = computed(() => {
-  const searchTerm = serchedValue.value ? serchedValue.value.toLowerCase() : ''
-
-  return products.value.filter(product => product.name.toLowerCase().includes(searchTerm))
-})
-
-const addToCart = (product) => {
-    store.addToCart(product)
-}
-</script>
-<style lang="scss"></style>
+  });
+  
+  const filteredProducts = computed(() => {
+    const searchTerm = searchedValue.value ? searchedValue.value.toLowerCase() : '';
+    return products.value.filter(product => product.name.toLowerCase().includes(searchTerm));
+  });
+  
+  const addToCart = (product) => {
+    store.addToCart(product);
+    showToast('info', `Aggiunto ${product.name} al carrello`);
+    console.log(toast.add);
+  };
+  
+  const showToast = (severity, detail) => {
+    toast.add({
+      severity: severity,
+      summary: 'Notifica',
+      detail: detail,
+      life: 3000
+    });
+  };
+  </script>
+  
+  <style lang="scss"></style>
+  
